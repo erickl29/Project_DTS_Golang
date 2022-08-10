@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Halaman Utama Project Go DTS</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div class="top-wrapper">
+        <div class="container"> 
+        <h2> Daftar Pegawai</h2>  
+         
+        <a href="/product/add" class="btn tambah">  <span class="fa fa-plus"> Tambah</span> </a>
+        
+
+        <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border ="1">
+           <thead>
+            <tr>
+                <th> NIP </th>
+                <th> Nama</th>
+                <th> Alamat</th>
+                <th> NoHp</th>
+                <th> Tugas</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        </table>
+            </div>
+
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="1">
+                    <tbody>
+            {{range .products}}
+                <tr>
+                    <td>{{.NIP}} </td>
+                    <td>{{.Nama}} </td>
+                    <td>{{.Alamat}} </td>
+                    <td>{{.Nohp}} </td>
+                    <td> <button class="btn mark">Belum Selesai</button> </td>
+                    <td> <a href="#" class="btn2 edit"><span class="fa fa-edit" > Edit</span> </a> | <a href="/product/delete?nip={{.NIP}}" onclick="return confirm('Are You Sure?')" class="btn2 trash"> <span class="fa fa-trash"> Hapus</span></a></td>
+
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    
+    </div>
+</div>
+    </body>
+
+</html>

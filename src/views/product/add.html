@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title> Add Pegawai</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+
+    <body>
+        <h3> Tambah Data Pegawai</h3>
+       
+        <form method="POST" action="/product/processadd">
+            <table>
+
+                <tr>
+                    <td> NIP</td>
+                    <td> <input type="number" name="nip" ></td>
+                </tr>
+
+                <tr>
+                    <td> Nama</td>
+                    <td> <input type="text" name="nama"></td>
+                </tr>
+                <tr>
+                    <td> Alamat</td>
+                    <td> <input type="text" name="alamat"></td>
+                </tr>
+
+                <tr>
+                    <td> Nohp</td>
+                    <td> <input type="number" name="nohp" min="0" ></td>
+                </tr>
+
+                <tr>
+                    <td> &nbsp;</td>
+                    <td> <input type="submit" value="Save"></td>
+                </tr>
+
+
+            </table>
+
+        </form>
+
+    </body>
+
+</html>

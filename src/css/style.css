@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.top-wrapper {
+   
+    background-size: cover;
+    
+  }
+
+  .top-wrapper h2{
+    font-size: 30px;
+  color: rgb(5, 0, 0);
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 15px;
+  }
+
+
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+.btn {
+    padding: 8px 14px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    text-decoration: none;
+    text-align: center;
+    
+  }
+
+  .btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
+  }
+
+ .tambah {
+    background-color: #1065b4; 
+    margin-bottom: 24px;
+    box-shadow: 0 3px #064aa3;
+    
+ } 
+
+ .fa {
+  margin-right: 5px;
+}
+
+table{
+  width:100%;
+  table-layout: fixed;
+  
+}
+.tbl-header{
+  background-color: rgba(56, 47, 47, 0.3);
+ }
+
+
+.tbl-content{
+  
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(15, 156, 175, 0.3);
+}
+
+th{
+  
+  text-align: center;
+  font-weight: 500;
+  
+}
+
+td {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  vertical-align:middle;
+}
+
+.mark {
+  background-color: rgba(255, 4, 4, 0.9);
+  border: 2px solid #ffffff;
+
+}
+
+.mark:hover {
+  box-shadow: 0 0 40px 40px #c51010 inset;
+}
+.tambah:active{
+  box-shadow:none;
+  position:relative;
+  top: 3px;
+}
+
+input{
+  width: 400px;
+  margin-top:10px;
+  margin-bottom:30px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid #dee7ec;
+ }
+
+ .btn2{
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+
+ }
+
+ .edit {
+  background-color: #d3d014;
+ }
+
+ .trash {
+  background-color: #e90c0c;
+ }
+
+ .search{
+   float: right;
+ }
+
+ @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
