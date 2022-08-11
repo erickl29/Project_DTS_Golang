@@ -1,7 +1,6 @@
 package productcontroller
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 	"strconv"
@@ -45,9 +44,21 @@ func ProcessAdd(response http.ResponseWriter, request *http.Request) {
 func Delete(response http.ResponseWriter, request *http.Request) {
 	query := request.URL.Query()
 	NIP, _ := strconv.ParseInt(query.Get("nip"), 10, 64)
-	fmt.Println("NIP:", NIP)
 	var productModel models.ProductModel
 	productModel.Delete(NIP)
 	http.Redirect(response, request, "/product", http.StatusSeeOther)
+
+}
+
+func Edit(response http.ResponseWriter, request *http.Request) {
+	query := request.URL.Query()
+	NIP, _ := strconv.ParseInt(query.Get("nip"), 10, 64)
+	var productModel models.ProductModel
+	pegawai, _ := productModel.Find(NIP)
+	data := map[string]interface{}{
+		"pegawai": pegawai,
+	}
+	tmp, _ := template.ParseFiles("views/product/edit.html")
+	tmp.Execute(response, data)
 
 }

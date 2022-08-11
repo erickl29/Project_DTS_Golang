@@ -13,6 +13,7 @@ func main() {
 	http.HandleFunc("/product/add", productcontroller.Add)
 	http.HandleFunc("/product/processadd", productcontroller.ProcessAdd)
 	http.HandleFunc("/product/delete", productcontroller.Delete)
+	http.HandleFunc("/product/edit", productcontroller.Edit)
 
 	fileServer := http.FileServer(http.Dir("css"))
 	http.Handle("/static/", http.StripPrefix("/static", fileServer))

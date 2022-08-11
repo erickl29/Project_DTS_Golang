@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title> Edit Pegawai</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+
+    <body>
+        <h3> Edit Data Pegawai</h3>
+       
+        <form method="POST" action="/product/update">
+            <table>
+
+                <tr>
+                    <td> NIP</td>
+                    <td> <input type="number" name="nip" value="{{.pegawai.NIP}}"></td>
+                </tr>
+
+                <tr>
+                    <td> Nama</td>
+                    <td> <input type="text" name="nama" value="{{.pegawai.Nama}}"></td>
+                </tr>
+                <tr>
+                    <td> Alamat</td>
+                    <td> <input type="text" name="alamat" value="{{.pegawai.Alamat}}"></td>
+                </tr>
+
+                <tr>
+                    <td> Nohp</td>
+                    <td> <input type="number" name="nohp" min="0" value="{{.pegawai.Nohp}}" ></td>
+                </tr>
+
+                <tr>
+                    <td> &nbsp;</td>
+                    <td> <input type="submit" value="Save"></td>
+                    <td> <input type="hidden"  name="nip" value="{{.pegawai.NIP}}"></td>
+
+                </tr>
+
+
+            </table>
+
+        </form>
+
+    </body>
+
+</html>

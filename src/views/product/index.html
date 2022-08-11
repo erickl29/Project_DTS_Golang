@@ -40,7 +40,7 @@
                     <td>{{.Alamat}} </td>
                     <td>{{.Nohp}} </td>
                     <td> <button class="btn mark">Belum Selesai</button> </td>
-                    <td> <a href="#" class="btn2 edit"><span class="fa fa-edit" > Edit</span> </a> | <a href="/product/delete?nip={{.NIP}}" onclick="return confirm('Are You Sure?')" class="btn2 trash"> <span class="fa fa-trash"> Hapus</span></a></td>
+                    <td> <a href="/product/edit?nip={{.NIP}}" class="btn2 edit"><span class="fa fa-edit" > Edit</span> </a> | <a href="/product/delete?nip={{.NIP}}" onclick="return confirm('Are You Sure?')" class="btn2 trash"> <span class="fa fa-trash"> Hapus</span></a></td>
 
                 </tr>
                 {{end}}

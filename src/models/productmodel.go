@@ -29,6 +29,26 @@ func (*ProductModel) FindAll() ([]entities.Product, error) {
 	}
 }
 
+func (*ProductModel) Find(NIP int64) (entities.Product, error) {
+
+	db, err := config.GetDB()
+	if err != nil {
+		return entities.Product{}, err
+	} else {
+		rows, err2 := db.Query("select * from pegawai where id =?", NIP)
+		if err2 != nil {
+			return entities.Product{}, err2
+		} else {
+			var pegawai entities.Product
+			for rows.Next() {
+				rows.Scan(&pegawai.NIP, &pegawai.Nama, &pegawai.Alamat, &pegawai.Nohp)
+
+			}
+			return pegawai, nil
+		}
+	}
+}
+
 func (*ProductModel) Create(pegawai *entities.Product) bool {
 
 	db, err := config.GetDB()
@@ -36,6 +56,23 @@ func (*ProductModel) Create(pegawai *entities.Product) bool {
 		return false
 	} else {
 		result, err2 := db.Exec("insert into pegawai(NIP, Nama, Alamat, Nohp) values (?,?,?,?)", pegawai.NIP, pegawai.Nama, pegawai.Alamat, pegawai.Nohp)
+		if err2 != nil {
+			return false
+		} else {
+			rowAffected, _ := result.RowsAffected()
+			return rowAffected > 0
+		}
+
+	}
+}
+
+func (*ProductModel) Update(pegawai entities.Product) bool {
+
+	db, err := config.GetDB()
+	if err != nil {
+		return false
+	} else {
+		result, err2 := db.Exec("update pegawai set Nama = ?, Alamat = ?, Nohp =? , where NIP = ?", pegawai.Nama, pegawai.Alamat, pegawai.Nohp, pegawai.NIP)
 		if err2 != nil {
 			return false
 		} else {
